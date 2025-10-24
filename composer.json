@@ -1,0 +1,22 @@
+{
+    "require": {
+        "inter-mediator/inter-mediator": "dev-master"
+    },
+    "config": {
+        "allow-plugins": {
+            "mouf/nodejs-installer": true,
+            "simplesamlphp/composer-module-installer": true,
+            "simplesamlphp/composer-xmlprovider-installer": true
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "cd vendor/inter-mediator/inter-mediator && npm install --before 2025-09-14",
+            "vendor/inter-mediator/inter-mediator/dist-docs/generateminifyjshere.sh"
+        ],
+        "post-update-cmd": [
+            "cd vendor/inter-mediator/inter-mediator && npm install --before 2025-09-14",
+            "vendor/inter-mediator/inter-mediator/dist-docs/generateminifyjshere.sh"
+        ]
+    }
+}
